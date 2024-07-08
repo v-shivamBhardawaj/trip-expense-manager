@@ -12,7 +12,6 @@ import {headerRequest, footerRequest} from 'server/middlewares';
 import { getHtmlTemplate } from 'server/template';
 import { IS_RENDER_TO_STREAM } from 'server/constants';
 import { getKeyFromCookie } from 'utils/helper/helpers';
-//import { mainDataRequest } from './mainDataRequest';
 import { RootState, initStore } from 'store/store';
 
 const serverRenderer = (chunkExtractor: ChunkExtractor):

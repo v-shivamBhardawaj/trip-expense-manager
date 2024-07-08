@@ -333,6 +333,10 @@
   &-40 {
     width: 40%;
   }
+  
+  &-45 {
+    width:45%;
+  }
 
   &-30 {
     width: 30%;
@@ -451,10 +455,11 @@
   }
 }
 
-.display-flex {
+.flex {
   &-row {
     display: flex;
     flex-direction: row;
+    justify-content:center;
   }
 
   &-column {
