@@ -23,14 +23,10 @@ export const commonS2SApi = createApiFunction({
   }),
   endpoints: builder => ({
     getApi: builder.query<any, any>({
-      query: ({ cookie, url, params }) => {
+      query: ({ headersReqParams, url, params }) => {
         return {
           url,
-          headers: {
-            'content-type': 'text/plain',
-            'cookie': cookie,
-            'Access-Control-Allow-Origin': '*'
-          },
+          headers: headersReqParams,
           params: params,
           responseHandler: (response: { text: () => any }) => response.text()
         }
