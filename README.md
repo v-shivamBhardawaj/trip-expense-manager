@@ -3,6 +3,7 @@
 Core:
 
 - **React** 18+
+- **Nodes** 20+
 - **webpack** 5+ (with optional **SWC** support and SSR or static build)
 - **TypeScript** (with strict rules, including  webpack configuration)
 
