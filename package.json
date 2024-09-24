@@ -39,7 +39,6 @@
     "@types/react-helmet": "6.1.6",
     "@types/react-redux": "^7.1.33",
     "@types/react-router-dom": "5.3.3",
-    "@types/react-virtualized": "^9.21.30",
     "@types/serialize-javascript": "5.0.2",
     "@types/through": "0.0.30",
     "@types/uuid": "^9.0.7",
@@ -83,7 +82,8 @@
     "webpack-dev-server": "4.11.1",
     "webpack-hot-middleware": "2.25.3",
     "webpack-manifest-plugin": "5.0.0",
-    "webpack-node-externals": "3.0.0"
+    "webpack-node-externals": "3.0.0",
+    "react-progressive-list": "^0.1.2"
   },
   "dependencies": {
     "@apollo/react-ssr": "4.0.0",
