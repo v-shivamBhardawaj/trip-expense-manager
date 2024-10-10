@@ -66,8 +66,9 @@
     "postcss": "8.4.21",
     "postcss-scss": "4.0.6",
     "react-hook-form": "^7.51.3",
+    "react-progressive-list": "^0.1.2",
     "react-refresh": "0.14.0",
-    "sass-loader": "13.2.0",
+    "sass-loader": "^16.0.2",
     "shelljs": "^0.8.5",
     "swc-loader": "0.2.3",
     "ts-loader": "9.4.2",
@@ -82,8 +83,7 @@
     "webpack-dev-server": "4.11.1",
     "webpack-hot-middleware": "2.25.3",
     "webpack-manifest-plugin": "5.0.0",
-    "webpack-node-externals": "3.0.0",
-    "react-progressive-list": "^0.1.2"
+    "webpack-node-externals": "3.0.0"
   },
   "dependencies": {
     "@apollo/react-ssr": "4.0.0",
