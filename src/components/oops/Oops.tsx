@@ -1,4 +1,3 @@
-import NotFound from 'components/NotFound/NotFound';
 import { FC, ReactElement } from 'react';
 
 interface IProps {
@@ -7,7 +6,7 @@ interface IProps {
 
 const Oops: FC<IProps> = (): ReactElement => (
   <>
-    <div><NotFound/></div>
+    <div>Oops</div>
   </>
 );
 

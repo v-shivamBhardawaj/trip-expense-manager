@@ -3,9 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-.yatra-header{
-  z-index: 1000!important;
+
+.yatra-header {
+  z-index: 1000 !important;
 }
+
+// #root {
+//   margin-top: 66px;
+// }
 
 body {
   // font-family: "Lato Regular";
@@ -15,7 +20,7 @@ body {
 }
 
 
-hr{
+hr {
   border: 0;
   margin: 0;
   border-top: 1px solid #eeeeee;
@@ -35,6 +40,7 @@ hr{
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
   animation-duration: 1s;
+
   &-slow {
     animation-duration: 2s;
   }

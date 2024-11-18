@@ -6,7 +6,7 @@
             <stop stop-color="#0B6631" offset="100%"/>
         </linearGradient>
     </defs>
-    <g fillRule="nonzero" fill="none">
+    <g fill-rule="nonzero" fill="none">
         <path d="M17.333 12 6 10v14.778A1.224 1.224 0 0 0 7.221 26h19.556A1.22 1.22 0 0 0 28 24.778v-5.445L17.333 12z" fill="#185C37"/>
         <path d="M17.333 0H7.22c-.323 0-.634.125-.863.35C6.13.574 6 .878 6 1.195v5.327l11.333 6.521 6 1.957L28 13.043V6.522L17.333 0z" fill="#21A366"/>
         <path fill="#107C41" d="M6 6h11v7H6z"/>

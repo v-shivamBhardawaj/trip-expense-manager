@@ -19,7 +19,7 @@ export default function AlertDialog(props: AlertDialogData) {
         alertDisapatch(hideAlert());
     }
     return (
-        <>
+        <div>
             <Dialog open={props.show}>
                 <DialogTitle>{props.title}
                     <IconButton onClick={()=>triggerAction('OK')}
@@ -46,6 +46,6 @@ export default function AlertDialog(props: AlertDialogData) {
                     }
                 </DialogActions>
             </Dialog>
-        </>
+        </div>
     )
 }

@@ -4,8 +4,7 @@ const loaderSlice = createSlice({
   name: 'loader',
   initialState: {
     isLoading: false,
-    oMessage : 'Please wait...',
-    loaderData: null
+    oMessage : 'Please wait...'
   },
   reducers: {
     startLoading: (state,action) => {
@@ -15,11 +14,9 @@ const loaderSlice = createSlice({
     stopLoading: (state) => {
       state.isLoading = false;
     },
-    setLoaderData: (state, action) => {
-      state.loaderData = action.payload;
-    }
   },
 });
 
-export const { startLoading, stopLoading, setLoaderData } = loaderSlice.actions;
+export const { startLoading, stopLoading } = loaderSlice.actions;
+
 export const loaderReducer =loaderSlice.reducer;

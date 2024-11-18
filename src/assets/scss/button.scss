@@ -5,8 +5,8 @@
 
 
 // button.MuiButton-root {
-//     // font-size: 10px;
-//     // border-radius: 36px;
+//     font-size: 10px;
+//     border-radius: 36px;
 //     box-shadow: 3px 3px 3px #8080805c;
 // }
 
@@ -14,18 +14,12 @@
 //     background-color: var(--color-button-primary);
 //     font-weight: bold;
 // }
-
-// button.MuiButton-outlined {
-//     color: var(--color-button-primary);
-//     border-color: var(--color-button-primary);
-// }
-
 // button.MuiButtonBase-root:disabled {
 //     cursor: not-allowed;
 //     pointer-events: auto;
-//     background-color: #D97E7E !important;
-//     color: white; // font-size: 10px;
-
+//     background-color: #e2e2e2 !important;
+//     font-size: 10px;
+//     border-radius: 36px;
 // }
 
 // button.MuiButton-contained:hover:not(:disabled) {

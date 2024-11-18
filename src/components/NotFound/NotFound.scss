@@ -5,7 +5,6 @@
     bottom: 0;
     right: 0;
     z-index: 1300 !important;
-    background-color: #fff;
 
     #notFoundSvg {
         width: 737px;
@@ -13,22 +12,32 @@
     }
 
     .sorry-text {
-        font-size: 74px;
+        font-size: 4.625rem;
         font-weight: 500;
         letter-spacing: -1.48px;
         color: #442f86;
     }
 
     .page-not-text {
-        font-size: 44px;
+        font-size: 2.75rem;
         letter-spacing: -0.88px;
-        color: var(--color-theme);
+        color: #f34f4f;
     }
 
     .sub-text-404 {
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 1.39;
         letter-spacing: -0.5px;
         color: #666;
     }
+}
+
+//notfound alert box
+.alert_box{
+    background: #fefddc;
+    height: 47px;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
 }

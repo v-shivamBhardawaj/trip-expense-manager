@@ -32,4 +32,4 @@ class ErrorBoundary extends Component<IProps> {
   }
 }
 
-export  {ErrorBoundary };
+export { ErrorBoundary };

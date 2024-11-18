@@ -1,4 +1,4 @@
-
+ 
 const { createLogger, format, transports, config } = require('winston');
 const { combine, timestamp, json, colorize } = format;
 
@@ -12,7 +12,8 @@ const appLogger = createLogger({
     format: combine(
         timestamp({format: 'YYYY-MM-DD HH:mm:ss'}),
         json(),
-        colorize({ all: true }),        
+        colorize({ all: true }),
+        
     ),
     transports: [
         new transports.Console(),
@@ -22,6 +23,7 @@ const appLogger = createLogger({
         new transports.File({ filename: ErrorLogFileName })
     ]
 });
+
 
 module.exports = {
     appLogger: appLogger

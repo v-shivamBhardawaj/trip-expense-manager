@@ -4,15 +4,20 @@ import {  Response, RequestHandler } from 'express';
 import { StaticRouter } from 'react-router-dom/server';
 import { ChunkExtractor } from '@loadable/server';
 import { getDataFromTree } from '@apollo/react-ssr';
+
+import { initStore, RootState } from 'store/store';
 import { Provider } from 'react-redux';
 
 import { App } from 'src/App';
 import { ROUTE_CONSTANTS } from 'constants/routeConstants';
-import {headerRequest, footerRequest} from 'server/middlewares';
-import { getHtmlTemplate } from 'server/template';
+import { footerRequest, headerRequest} from 'server/middlewares';
 import { IS_RENDER_TO_STREAM } from 'server/constants';
-import { getKeyFromCookie } from 'utils/helper/helpers';
-import { RootState, initStore } from 'store/store';
+
+import { getKeyFromCookie } from 'utils/helpers';
+import { setError } from 'store/Error/ErrorSlice';
+import { getHtmlTemplate } from 'server/template';
+
+
 
 const serverRenderer = (chunkExtractor: ChunkExtractor):
 RequestHandler => async (req: any, res: Response) => {
@@ -20,12 +25,9 @@ RequestHandler => async (req: any, res: Response) => {
     req.path,
   );
 
-  if (isPageAvailable) {
-    req.url = ROUTE_CONSTANTS.DEFAULT_PAGE;
-  }else{
+  if (!isPageAvailable) {
     req.url = ROUTE_CONSTANTS.NOT_FOUND;
   }
-
   res.type('html')   
 
   const location: string = req.url;
@@ -39,6 +41,9 @@ RequestHandler => async (req: any, res: Response) => {
       return frescoData[key] = data    
   }
 
+  let preloadedState: Partial<RootState> = {  };
+  const store = initStore(preloadedState);
+
   /*
   Prefetching with RTK Query:
   - Get data;
@@ -49,17 +54,17 @@ RequestHandler => async (req: any, res: Response) => {
   Note: Why not just get data during SSR?
   Because rendering will be done before resolving the request Promise.
   */
-  let preloadedState: Partial<RootState> = {};
-  const store = initStore(preloadedState);
-
-    let ssoToken = getKeyFromCookie("ssoToken",req?.headers?.cookie);
-    if(req?.headers?.cookie && Object.keys(req?.query).length != 0 && ssoToken){
-        await headerRequest(store,req?.headers?.cookie,setHeaderFooterValue);
-        await footerRequest(store,req?.headers?.cookie,setHeaderFooterValue);
-        //await mainDataRequest(store,req?.headers?.cookie,req?.query);
+  
+  
+    let ssoToken = getKeyFromCookie("ssoToken",req?.headers?.cookie )
+    if(req?.headers?.cookie && ssoToken){
+      await headerRequest(store,req?.headers?.cookie,req?.query, setHeaderFooterValue);
+      await footerRequest(store,req?.headers?.cookie,setHeaderFooterValue);
+    }else{
+      store.dispatch(setError())
     }
-
-   preloadedState = { ...store.getState() };
+  
+    preloadedState = { ...store.getState() };
   
   const helmetContext = {};
 
@@ -88,7 +93,7 @@ RequestHandler => async (req: any, res: Response) => {
         nonce: res.locals.cspNonce,
         frescoData,
       });
-      
+
     res.write(header);
     let didError = false;
     const stream = renderToPipeableStream(

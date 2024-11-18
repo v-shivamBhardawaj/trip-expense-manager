@@ -41,9 +41,7 @@
     ],
   },
   "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs"
-    }
+    "compilerOptions": { "module": "commonjs" }
   },
   "include": [
     "src",

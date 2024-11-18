@@ -1,16 +1,15 @@
 import { configureStore, StateFromReducersMapObject } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { rootReducer } from './rootReducer';
-import { commonS2SApi } from 'api';
-import { commonApi } from 'api/commonApi/apis';
+import { commonApi, commonS2SApi } from 'api';
 
 const initStore = (preloadedState?: Partial<RootState>) => configureStore({
   reducer: rootReducer,
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({ serializableCheck: false }).concat([
+    getDefaultMiddleware().concat([
       commonS2SApi.middleware,
       commonApi.middleware
-    ]),
+      ]),
   preloadedState,
   devTools: String(process.env.NODE_ENV).trim() !== 'production',
 });

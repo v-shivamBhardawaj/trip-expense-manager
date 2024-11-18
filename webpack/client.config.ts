@@ -49,6 +49,9 @@ const plugins: WebpackPluginInstance[] = [
   ] : [
     new CssoWebpackPlugin(),
   ]),
+  new DefinePlugin({
+    'process.env': JSON.stringify(process.env)
+  })
 ];
 
 const clientConfig: Configuration = {

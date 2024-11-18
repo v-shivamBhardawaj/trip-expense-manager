@@ -1,6 +1,8 @@
 import { buildCreateApi, coreModule, reactHooksModule, createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { isServer } from 'utils';
-import { BASE_URL, TIMEOUT } from "../../utils/constants";
+import { PROD_BASE_URL, TIMEOUT } from "../../utils/constants";
+
+
 let createApiFunction = createApi;
 
 /*
@@ -19,15 +21,17 @@ if (isServer) {
 export const commonS2SApi = createApiFunction({
   reducerPath: 'commonS2SApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: BASE_URL,
+    baseUrl: PROD_BASE_URL,
   }),
   endpoints: builder => ({
     getApi: builder.query<any, any>({
-      query: ({ headersReqParams, url, params }) => {
+      query: ({ headersReqParams, url, params, timeout }) => {
+        console.log(url);
         return {
           url,
           headers: headersReqParams,
           params: params,
+          timeout: timeout || TIMEOUT,
           responseHandler: (response: { text: () => any }) => response.text()
         }
       },
@@ -45,12 +49,13 @@ export const commonS2SApi = createApiFunction({
       },
     }),
     postApiWithTenantId: builder.query<any, any>({
-      query: ({ headersReqParams, url, params }) => {
+      query: ({ headersReqParams, url, params, timeout }) => {
         return {
           url,
           method: 'POST',
           headers: headersReqParams,
           'body': params,
+          timeout: timeout || TIMEOUT,
           responseHandler: (response: { text: () => any }) => response.text()
         }
       },
@@ -65,48 +70,36 @@ export const commonApi = createApiFunction({
   }),
   endpoints: builder => ({
     getApi: builder.query<any, any>({
-      query: ({ headersReqParams, url, params, timeout, signal }) => {
+      query: ({ headersReqParams, url, params, timeout }) => {
         return {
           url,
           headers: headersReqParams,
           params: params,
-          timeout: timeout || TIMEOUT,
-          signal: signal
+          timeout: timeout || TIMEOUT
         }
       },
     }),
     postApi: builder.query<any, any>({
-      query: ({ headersReqParams, url, data, forcerefetch = false }) => {
+      query: ({ headersReqParams, url, data, timeout }) => {
         return {
           url,
-          forcerefetch: forcerefetch ? true : false,
           method: 'POST',
           headers: headersReqParams,
           'body': data,
-          timeout: TIMEOUT
+          timeout: timeout || TIMEOUT
         }
       },
     }),
     postApiNoBody: builder.query<any, any>({
-      query: ({ headersReqParams, url, data }) => {
+      query: ({ headersReqParams, url, data, timeout }) => {
         return {
           url,
           method: 'POST',
           headers: headersReqParams,
           params: data,
-          timeout: TIMEOUT
+          timeout: timeout || TIMEOUT
         }
       },
-    }),
-    postApiFormData: builder.mutation<any, any>({
-      query: ({ url, body, headersReq }) => {
-        return {
-          url,
-          method: "POST",
-          headers: headersReq,
-          body,
-        };
-      },
-    }),
+    })
   })
 })

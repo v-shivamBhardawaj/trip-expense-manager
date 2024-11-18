@@ -1,8 +1,8 @@
 import Grid from "@mui/material/Grid"
 import Stack from "@mui/material/Stack"
 import Button from "@mui/material/Button"
-import {PROD_BASE_URL,LOGIN_URL} from 'utils/constants';
-import PageNotFoundImage from './NotFoundSvg'
+import { LOGIN_URL, PROD_BASE_URL } from 'utils/constants';
+import NotFoundSvg from './NotFoundSvg'
 import './NotFound.scss'
 
 const NotFound = () => {
@@ -30,7 +30,7 @@ const NotFound = () => {
                 </Button>
             </Grid>
             <Grid item xs={12} md={7} className="padding">
-                <PageNotFoundImage />
+                <NotFoundSvg />
             </Grid>
         </Stack>
     </div>

@@ -1,1 +1,1 @@
-export { checkPage, isServer } from './helper/helpers';
+export { checkPage, isServer } from './helpers';

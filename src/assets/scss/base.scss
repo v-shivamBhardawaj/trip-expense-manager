@@ -1,11 +1,14 @@
 // @import 'bootstrap/scss/bootstrap';
-@import './variables';
-@import './helper.scss';
-@import './global';
-@import './general';
-@import './fonts.scss';
-@import './disabled';
-@import './button.scss';
-@import './imageIcons.scss';
+@use './variables';
+@use './helper.scss';
+@use './global';
+@use './general';
+@use './fonts.scss';
+@use './disabled';
+@use './button.scss';
+@use './imageIcons.scss';
+@use './header.scss';
 @import url(https://www.yatra.com/trip/resources/css/common/fa-fonts.css);
 @import url(https://www.yatra.com/corp-airline-cdn/css/int.css);
+@import 'react-date-range/dist/styles.css'; // main css file
+@import 'react-date-range/dist/theme/default.css'; // theme css file

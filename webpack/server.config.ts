@@ -33,6 +33,7 @@ const serverConfig: Configuration = {
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
     new MiniCssExtractPlugin(),
+    
   ],
   module: {
     rules: Object.values(Loaders).map(el => el.server),

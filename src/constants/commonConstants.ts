@@ -27,22 +27,3 @@ export const enum THEME_NAMES {
 }
 
 export const THEME_SWITCHER_DESCRIPTION = 'Theme switcher';
-
-export const URL_PARAMS = [];
-
-
-export const ALERT_DIALOG = {
-  TRY_AGAIN_MESSAGE: "Please Try After Sometime",
-  DIALOG_TITLE: "Error",
-  SUCCESSFULLY_UPDATED: "Status Successfully Updated",
-  SUCCESS_TITLE: "Success"
-}
-
-
-export const CONTENT_TYPE = {
-  APP_JSON: "application/json",
-}
-
-export const YT_CHANNEL = {
-  WEB: "WEB",
-}

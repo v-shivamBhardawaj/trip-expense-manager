@@ -17,12 +17,10 @@ setup()
 
 setupbuilddeploy()
 {
-	echo " -------------- Starting Deployment Process ------------------------ "
-	echo " -------------- NPM INSTALL -- NPM Build and Start ----------------- "
-		#npm install && npm list -prod
-        #npm run build && npm run start:prod
+	echo " -------------- Starting Deployment Process ------------------------ "	    
         npm run start:prod
-	echo " ----- NPM INSTALLED Application Deployment Process Complete ------- "
+	echo " ----- Application Deployment Process Complete ------- "
+    echo " ----- Application Starting..... ------- "
 
 }
 # initilize script here

@@ -7,8 +7,6 @@ import { initStore } from 'store/store';
 import { Provider } from 'react-redux';
 import { isServer } from 'utils';
 import { ROUTE_CONSTANTS } from 'constants/routeConstants';
-import { ThemeProvider } from '@mui/material';
-import { Theme } from './Themse/theme';
 const store = initStore(!isServer && window.__PRELOADED_STATE__ && window.__PRELOADED_STATE__);
 
 if (module.hot) {
@@ -20,15 +18,13 @@ if (module.hot) {
 
 const indexJSX
   = 
-  <ThemeProvider theme={Theme}>
     <Provider store={store}>
       <HelmetProvider>
         <BrowserRouter basename={ROUTE_CONSTANTS.BASE_PATH}>
           <App />
         </BrowserRouter>
       </HelmetProvider>
-    </Provider>
-    </ThemeProvider>
+    </Provider>;
 
 const container = document.getElementById('root');
 

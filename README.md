@@ -3,7 +3,6 @@
 Core:
 
 - **React** 18+
-- **Nodes** 20+
 - **webpack** 5+ (with optional **SWC** support and SSR or static build)
 - **TypeScript** (with strict rules, including  webpack configuration)
 
@@ -65,7 +64,7 @@ Other:
 
 4. Application Health URL:
 
-   `https://dev.yatra.com/yt-boiler-plate-v2/DefaultPage`
+   `https://dev.yatra.com/yt-boiler-plate-v2/DefautPage`
 
 ### Build and run a server (SSR)
 
@@ -120,3 +119,4 @@ All configuration is available in files with constants:
 - `webpack\constants.ts` - contains working directories, SWC option and other related to bundling staff
 - `src\constants` - a directory with app files with configuration constants
 - `src\server\constants.ts` - contains a server port and render to stream options
+

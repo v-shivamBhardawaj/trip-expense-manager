@@ -7,7 +7,7 @@ import Loader from "components/Loader/Loader";
 import NotFound from "components/NotFound/NotFound";
 import { ThemeProvider } from '@mui/material';
 import { customTheme } from './Themse/customTheme';
-import {applyThemeConfig} from './utils/helper/helpers';
+import {applyThemeConfig} from './utils/helpers';
 
 const AlertDialog = lazy(() => import("components/common/AlertDialog"));
 const Router = lazy(() => import("router/Router"));

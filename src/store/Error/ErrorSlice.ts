@@ -6,7 +6,6 @@ const errorSlice = createSlice({
     initialState : {
         isPageNotFound : false,
         noResultFound : false,
-        noResultFoundJSON: {} as any,
     },
     reducers : {
         setError(state){
@@ -20,12 +19,9 @@ const errorSlice = createSlice({
         },
         removeError(state){
             state.isPageNotFound =  false
-        },
-        setNotFoundJSON:(state,actions) =>{
-            state.noResultFoundJSON = actions.payload;
         }
     }
 })
 
-export const { setError , removeError , setNoResultFound, removeNoResultFound, setNotFoundJSON } =  errorSlice.actions;
+export const { setError , removeError , setNoResultFound, removeNoResultFound } =  errorSlice.actions;
 export const errorReducer = errorSlice.reducer;

@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.halftone {
+    --mask: radial-gradient(circle at center, rgb(0 0 0), rgb(0 0 0 / 0.3));
+    --stop1: 0.06rem;
+    --bgSize: 0.9rem;
+    --invert: 0;
+    --dotColor: var(--halftone-color);
+    --bgColor: white;
+    --dottedBackground: radial-gradient(circle at center, var(--dotColor) var(--stop1), transparent);
+
+    aspect-ratio: 1;
+    position: relative;
+    background: var(--bgColor);
+    filter: contrast(10) invert(var(--invert, 0));
+    mix-blend-mode: multiply;
+    isolation: isolate;
+    width: 300px;
+    height: 500px;
+}
+
+.halftone::before {
+    width: 300px;
+    height: 500px;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--dottedBackground);
+    background-size: var(--bgSize, 1rem) var(--bgSize, 1rem);
+    background-repeat: round;
+    background-position: 0 0, var(--bgPosition) var(--bgPosition);
+    mask-image: var(--mask);
+
+}

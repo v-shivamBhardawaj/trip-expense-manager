@@ -18,7 +18,37 @@ $sizes: (
   17: 2.125rem, /* 34px */
   18: 2.25rem,  /* 36px */
   19: 2.375rem, /* 38px */
-  20: 2.5rem    /* 40px */
+  20: 2.5rem,    /* 40px */
+  21: 2.625rem, /* 42px */
+  22: 2.75rem,  /* 44px */
+  23: 2.875rem, /* 46px */
+  24: 3rem,     /* 48px */
+  25: 3.125rem, /* 50px */
+  26: 3.25rem,  /* 52px */
+  27: 3.375rem, /* 54px */
+  28: 3.5rem,   /* 56px */
+  29: 3.625rem, /* 58px */
+  30: 3.75rem,  /* 60px */
+  31: 3.875rem, /* 62px */
+  32: 4rem,     /* 64px */
+  33: 4.125rem, /* 66px */
+  34: 4.25rem,  /* 68px */
+  35: 4.375rem, /* 70px */
+  36: 4.5rem,   /* 72px */
+  37: 4.625rem, /* 74px */
+  38: 4.75rem,  /* 76px */
+  39: 4.875rem, /* 78px */
+  40: 5rem,     /* 80px */
+  41: 5.125rem, /* 82px */
+  42: 5.25rem,  /* 84px */
+  43: 5.375rem, /* 86px */
+  44: 5.5rem,   /* 88px */
+  45: 5.625rem, /* 90px */
+  46: 5.75rem,  /* 92px */
+  47: 5.875rem, /* 94px */
+  48: 6rem,     /* 96px */
+  49: 6.125rem, /* 98px */
+  50: 6.25rem  /* 100px */
 );
 
 .p {
@@ -52,6 +82,14 @@ $sizes: (
     &-#{$key} {
       margin: $value;
     }
+    
+    &l-#{$key} {  // Corrected here
+      margin-left: $value;
+    }
+
+    &r-#{$key} {  // Corrected here
+      margin-right: $value;
+    }
 
     &x-#{$key} {
       margin-left: $value;
@@ -70,171 +108,140 @@ $sizes: (
     &b-#{key}{
       margin-top: $value;
     }
+
+    
   }
 }
 
 .w {
+    &-100 {
+        width: 100%;
+    }
 
-  &-100,
-  &-full {
-    width: 100%;
-  }
+    &-75 {
+        width: 75%;
+    }
 
-  &-80 {
-    width: 80%;
-  }
+    &-70 {
+        width: 70%;
+    }
 
+    &-60 {
+        width: 60%;
+    }
 
-  &-75 {
-    width: 75%;
-  }
+    &-50 {
+        width: 50%;
+    }
 
-  &-70 {
-    width: 70%;
-  }
+    &-40 {
+        width: 40%;
+    }
 
-  &-60 {
-    width: 60%;
-  }
+    &-35 {
+        width: 35%;
+    }
 
-  &-50 {
-    width: 50%;
-  }
+    &-30 {
+        width: 30%;
+    }
 
-  &-40 {
-    width: 40%;
-  }
-  
-  &-45 {
-    width:45%;
-  }
+    &-36 {
+        width: 36%;
+    }
 
-  &-30 {
-    width: 30%;
-  }
+    &-25 {
+        width: 25%;
+    }
 
-  &-35 {
-    width: 35%;
-  }
-
-  &-28 {
-    width: 28%;
-  }
-
-  &-25 {
-    width: 25%;
-  }
-
-  &-20 {
-    width: 20%;
-  }
+    &-18 {
+        width: 18%;
+    }
 }
 
-.gap {
-  &-1 {
-    gap: 4px;
-  }
-
-  &-2 {
-    gap: 8px;
-  }
-
-  &-3 {
-    gap: 12px;
-  }
-
-  &-4 {
-    gap: 16px;
-  }
-
-  &-5 {
-    gap: 20px;
-  }
-
-  &-6 {
-    gap: 24px;
+.height {
+  &-100 {
+    height: 100vh;
   }
 }
 
 .rounded {
-  border-radius: var(--border-radius);
-
-  &-lg {
     border-radius: var(--border-radius);
-  }
+
+    &-lg {
+        border-radius: var(--border-radius);
+    }
 }
 
+.d {
+    &-flex {
+        display: flex;
+    }
 
-
-.display {
-  &-flex {
-    display: flex;
-  }
+    &-contents {
+        display: contents;
+    }
 }
 
 .flex {
-  display: flex;
-
-  &-row {
-    flex-direction: row;
+    display: flex;
+  
+    &-row {
+      flex-direction: row;
+    }
+  
+    &-col {
+      flex-direction: column;
+    }
+  
+    &-wrap {
+      flex-wrap: wrap;
+    }
   }
-
-  &-col {
-    flex-direction: column;
-  }
-
-  &-wrap {
-    flex-wrap: wrap;
-  }
-}
 
 .justify {
-  &-between {
-    justify-content: space-between;
-  }
+    &-around {
+        justify-content: space-around;
+    }
 
-  &-center {
-    justify-content: center;
-  }
-
-  &-around {
-    justify-content: space-around;
-  }
-
-  &-end {
-    justify-content: flex-end;
-  }
-
-  &-right {
-    justify-content: right;
-  }
+    &-between {
+        justify-content: space-between;
+    }
+    &-start{
+        justify-content: flex-start;
+    }
+}
+.align{
+    &-baseline{
+        align-items: baseline;
+    }
+    &-center{
+        align-items: center;
+    }
+}
+.gap{
+    &-1{
+        gap:1rem;
+    }
+    &-2{
+        gap:2rem;
+    }
 }
 
-.align {
-  &-center {
-    align-items: center;
-  }
+.overflow{
+    &-hidden{
+        overflow: hidden;
+    }
+    &-auto{
+        overflow: auto;
+    }
+    &-x-hidden{
+        overflow-x: hidden;
+    }
 }
 
-.position {
-  &-relative {
-    position: relative;
-  }
-
-  &-absolute {
-    position: absolute;
-  }
-}
-
-.flex {
-  &-row {
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-  }
-
-  &-column {
-    display: flex;
-    flex-direction: column;
-  }
+.br{
+    &-8{
+        border-radius: 8px;
+    }
 }

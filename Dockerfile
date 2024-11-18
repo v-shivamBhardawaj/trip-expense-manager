@@ -1,4 +1,4 @@
-FROM qaregistry.yatra.com/yatra-node-npm-v4:v20.12.0
+FROM qaregistry.yatra.com/yatra-node-npm:v18.6.0
 MAINTAINER Linuxadmin@yatra.com
 LABEL ProductName=yt-boiler-plate-v2
 #ADD --chown=yatra:yatra . /data/yatra/

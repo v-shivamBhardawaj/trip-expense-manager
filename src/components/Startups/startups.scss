@@ -1,0 +1,104 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 50px 100px;
+
+    .before {
+        border-radius: 30px;
+        position: absolute;
+        left: 0;
+        content: "";
+        height: calc(100%);
+        width: 75%;
+        z-index: -1;
+    }
+
+    .after {
+        border-radius: 30px;
+        position: absolute;
+        right: 0;
+        content: "";
+        height: calc(100%);
+        width: 75%;
+        z-index: -1;
+
+    }
+
+    .corporate-before::before {
+        background-color: rgba(64, 134, 216, 0.12);
+        @extend .before;
+    }
+
+    .sme-before::before {
+        background-color: rgba(254, 206, 158, 0.12);
+        @extend .before;
+    }
+
+    .travel_agent-before::before {
+        @extend .before;
+        background-color: rgba(201, 228, 222, 0.32);
+    }
+
+    .corporate-after::before {
+        background-color: rgba(64, 134, 216, 0.12);
+        @extend .after;
+    }
+
+    .sme-after::before {
+        background-color: rgba(254, 206, 158, 0.12);
+        @extend .after;
+    }
+
+    .travel_agent-after::before {
+        @extend .after;
+        background-color: rgba(201, 228, 222, 0.32);
+    }
+}
+
+.inner-div {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+// .inner-div::before {
+//     background-color: rgba(64, 134, 216, 0.12);
+//     border-radius: 30px;
+//     position: absolute;
+//     left: 0;
+//     content: "";
+//     height: calc(100%);
+//     width: 75%;
+//     z-index: -1;
+// }
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+    left: none;
+}
+
+
+
+.img-overlay {
+    position: absolute;
+    width: 60%;
+    height: 70%;
+}
+
+.img-overlay {
+    &-left {
+        @extend .img-overlay;
+        left: 0;
+    }
+
+    &-right {
+        @extend .img-overlay;
+        right: 0;
+    }
+}

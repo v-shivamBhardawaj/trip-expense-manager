@@ -6,7 +6,7 @@ const IS_SWC: boolean = true;
 const DEV_SERVER_PORT: number = 8040;
 const DEV_SERVER_HTTPS_PORT: number = 8050;
 
-const APP_NAME = 'yt-boiler-plate-v2';
+const APP_NAME ='yt-boiler-plate-v2';
 
 const SRC_DIR: string = path.join(__dirname, '../src');
 const DIST_DIR: string = path.join(__dirname, `../${APP_NAME}`);
@@ -33,7 +33,8 @@ const ALIAS: Record<string, string> = {
   store: `${SRC_DIR}/store`,
   types: `${SRC_DIR}/types`,
   utils: `${SRC_DIR}/utils`,
-  _webpack: path.join(__dirname, '../webpack')
+  _webpack: path.join(__dirname, '../webpack'),
+
 };
 
 export {

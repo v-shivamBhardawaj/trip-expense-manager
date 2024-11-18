@@ -4,7 +4,6 @@ import { clientConfig } from './webpack/client.config';
 import { serverConfig } from './webpack/server.config';
 
 const configs = [];
-
 if (process.env.NO_SSR === 'true') {
   configs.push(clientConfig);
 } else {

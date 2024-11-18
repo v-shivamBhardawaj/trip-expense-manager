@@ -1,6 +1,6 @@
 import { commonS2SApi } from 'api';
 import { FOOTER_URL } from 'utils/constants';
-import { getKeyFromCookie, urlFormatter } from 'utils/helper/helpers';
+import { getKeyFromCookie, urlFormatter } from 'utils/helpers';
 
 const footerRequest = async (store: any,cookie:any,setFooterValue:any) => {
   let ssoToken = getKeyFromCookie('ssoToken',cookie);

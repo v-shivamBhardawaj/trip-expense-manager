@@ -42,10 +42,6 @@
   text-align: center;
 }
 
-.text-justify {
-  text-align: justify;
-}
-
 .text-underline {
   text-decoration: underline;
 }
@@ -125,12 +121,11 @@
   cursor: pointer;
 }
 
-.not-allowed {
-  cursor: not-allowed;
-}
-
 .text-secondary {
   color: #999;
+}
+.text-tertialru{
+  color: #666666;
 }
 
 .errorMsg {
@@ -142,9 +137,7 @@
   &-uppercase {
     text-transform: uppercase;
   }
-
-
-  &-capitalize {
+  &-capitalize{
     text-transform: capitalize;
   }
 
@@ -155,11 +148,6 @@
   &-left {
     text-align: left;
   }
-
-  &-white {
-    color: var(--color-white);
-  }
-
 
   &-red {
     color: var(--color-red);
@@ -188,18 +176,6 @@
 
   &-coral {
     color: var(--color-coral);
-  }
-
-  &-tertiary {
-    color: #666;
-  }
-
-  &-capitalize {
-    text-transform: capitalize;
-  }
-
-  &-primary {
-    color: var(--primary-text-color);
   }
 }
 
@@ -327,27 +303,133 @@
   }
 }
 
-.estimated-fare {
-  font-weight: bold;
-  border-top: var(--border);
-}
-
-.before-tick {
-  position: relative;
-  padding: 14px 0 0 20px;
-
-
-  &::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #0fd170;
-    font-weight: 600;
+.pos {
+  &-relative {
+    position: relative;
   }
 }
 
-.confirmation-page-label-primary {
-  color: #3691ca;
-  margin: 10px 0px;
-  cursor: pointer;
+.trusted-companies {
+  width: 220px;
+  object-fit: contain;
 }
+
+.analytics {
+
+  .count {
+    font-size: 60px;
+    background: linear-gradient(0deg, #877CFF 0%, #4086D8 96.53%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  color: #666;
+  font-size: 18px;
+  padding:20px 60px;
+}
+
+.analytics:not(:last-child) {
+  border-right: 1px solid rgba(24, 24, 27, 0.2);
+}
+
+label{
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.plan{
+  &-basic{
+    background: linear-gradient(90deg, #FFF0D9 0%, #FFFFFF 50.5%, #FFEFD9 100%);
+    color: #7A4900;
+  }
+  &-pro{
+    background: linear-gradient(90deg, #E0EDFF 0%, #FFFFFF 50.5%, #E0EDFF 100%);
+    color:#003078;
+  }
+  &-elite{
+    background: linear-gradient(90deg, #EFE6FF 0%, #FFFFFF 50.5%, #EFE5FF 100%);
+    color: #3C009E;
+  }
+}
+.l-status{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  &-to_be_picked{
+    background: #3974F8;
+  }
+  &-picked{
+    background: #FAC400;
+  }
+  &-converted{
+    background: #55C961;
+  }
+  &-failed{
+    background: #F34F4F;
+  }
+}
+
+.remarks-container{
+  border-radius: 8px;
+  border: 1px solid #F34F4F80;
+  margin-left: 13%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding:4px;
+  width: 100%;
+  justify-content: end;
+  gap:4px;
+  font-size: 14px;
+  z-index: 1;
+  position: absolute;
+  cursor: pointer;
+  background:#FDF0F0;
+  transition: margin-left 0.5s ease-in-out;
+}
+.remarks-container:hover{
+  margin-left: 62%;
+}
+
+.generic-error{
+  background-color: #fff;
+  height: 400px;
+  padding: 4rem;
+  display: flex;
+  flex-direction: row;
+  gap:1rem;
+}
+
+@-moz-document url-prefix() {
+  * {
+    scrollbar-color: #888 #f1f1f1; /* thumb and track colors */
+    scrollbar-width: thin;
+  }
+}
+
+/* Apply global scrollbar styling */
+/* For WebKit-based browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 6px; /* width for vertical scrollbar */
+  height: 6px; /* height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* For Firefox */
+/* You can use scrollbar-color and scrollbar-width for Firefox */
+
