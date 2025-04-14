@@ -1,13 +1,13 @@
 replicaCount: 1
-name: yt-boiler-plate-v2
+name: trip-expense-manager
 image:
-  repository: "qaregistry.yatra.com/yt-boiler-plate-v2"
+  repository: "qaregistry.yatra.com/trip-expense-manager"
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion .
   tag: "061c682"
 args: PROD
 env:
-  Product: yt-boiler-plate-v2  
+  Product: trip-expense-manager  
 service:
   type: ClusterIP
   port: 80

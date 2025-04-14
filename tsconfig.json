@@ -24,7 +24,7 @@
     "baseUrl": ".",
     "removeComments": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./yt-boiler-plate-v2",
+    "outDir": "./trip-expense-manager",
     "paths": {
       "*": [
         "./src/*",
@@ -46,7 +46,7 @@
   "include": [
     "src",
     "webpack",
-    "webpack.config.ts",
+    "webpack.config.ts", "dbModels",
   ],
   "exclude": [
     "node_modules",

@@ -1,10 +1,15 @@
-export const APP_NAME = 'yt-boiler-plate-v2';
+
+export const APP_NAME = 'trip-expense-manager';
 
 export const PAGE_NAMES = {
   ABOUT: 'About',
   FETCH: 'Fetch',
   HOME: 'Home',
   PAGE_NOT_FOUND: 'Page Not Found',
+  TRIPS: 'Trips',
+  EXPENSES: 'Expenses',
+  UserAndControls: 'User And Controls',
+  BUDGETS: 'Budgets',
 };
 
 export const ABOUT_TEXT = 'About page';

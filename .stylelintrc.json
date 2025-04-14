@@ -77,6 +77,6 @@
     }
   ],
   "ignoreFiles": [
-    "yt-boiler-plate-v2/*.css"
+    "trip-expense-manager/*.css"
   ]
 }

@@ -1,9 +1,20 @@
+// Purpose: To store the route constants for the application.
 export const ROUTE_CONSTANTS = {
-  BASE_PATH: '/yt-boiler-plate-v2',
+  BASE_PATH: '/trip-expense-manager',
   FETCH: '/fetch',
   HOME: '/',
   NOT_FOUND: '/405',
-  DEFAULT_PAGE : '/DefaultPage',
+  Home_PAGE : '/HomePage',
   FAV_ICON:"/favicon.ico",
-  DASHBOARD: "/dashboard"
+  DASHBOARD: "/dashboard",
+  TRIPS: "/trips",
+  EXPENSES: "/expenses",
+  ADDTRIP: "/addtrip",
+  TRIPDETAILS: "/tripdetails",
+  USERANDCONTROLS: "/userandcontrols",
+  USERDETAILS: "/userdetails",
+  ADDUSER: "/adduser",
+  BUDGETS: "/budgets",
+  ADDBUDGET: "/addbudget",
+  BUDGETDETAILS: "/budgetdetails",
 };

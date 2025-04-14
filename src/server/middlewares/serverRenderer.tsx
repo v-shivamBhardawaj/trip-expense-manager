@@ -10,13 +10,9 @@ import { Provider } from 'react-redux';
 
 import { App } from 'src/App';
 import { ROUTE_CONSTANTS } from 'constants/routeConstants';
-import { footerRequest, headerRequest} from 'server/middlewares';
 import { IS_RENDER_TO_STREAM } from 'server/constants';
 
-import { getKeyFromCookie } from 'utils/helpers';
-import { setError } from 'store/Error/ErrorSlice';
 import { getHtmlTemplate } from 'server/template';
-
 
 
 const serverRenderer = (chunkExtractor: ChunkExtractor):
@@ -37,9 +33,7 @@ RequestHandler => async (req: any, res: Response) => {
     footer:'',
   }
 
-  function setHeaderFooterValue(key:string,data:any){
-      return frescoData[key] = data    
-  }
+
 
   let preloadedState: Partial<RootState> = {  };
   const store = initStore(preloadedState);
@@ -56,15 +50,8 @@ RequestHandler => async (req: any, res: Response) => {
   */
   
   
-    let ssoToken = getKeyFromCookie("ssoToken",req?.headers?.cookie )
-    if(req?.headers?.cookie && ssoToken){
-      await headerRequest(store,req?.headers?.cookie,req?.query, setHeaderFooterValue);
-      await footerRequest(store,req?.headers?.cookie,setHeaderFooterValue);
-    }else{
-      store.dispatch(setError())
-    }
-  
-    preloadedState = { ...store.getState() };
+    
+  preloadedState = { ...store.getState() };
   
   const helmetContext = {};
 

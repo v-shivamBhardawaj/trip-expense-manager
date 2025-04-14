@@ -22,7 +22,7 @@
         "react",
         "@typescript-eslint"
     ],
-    "ignorePatterns": ["yt-boiler-plate-v2", "node_modules"],
+    "ignorePatterns": ["trip-expense-manager", "node_modules"],
     "rules": {
         "indent": [
             "error",

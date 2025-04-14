@@ -34,7 +34,7 @@ const plugins: WebpackPluginInstance[] = [
       template: './src/assets/index.html',
     }),
   ] : []),
-  new ForkTsCheckerWebpackPlugin(),
+  ...(IS_DEV ? [new ForkTsCheckerWebpackPlugin()] : []),
   new MiniCssExtractPlugin({
     filename: IS_DEV ? `${STATIC_CONTENT_PATH}css/[name].css` : `${STATIC_CONTENT_PATH}css/[name].[contenthash].css`,
   }),

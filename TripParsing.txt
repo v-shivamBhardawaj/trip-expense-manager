@@ -1,0 +1,126 @@
+/*
+https://mocki.io/v1/51da8eca-478d-4bd2-aeb8-c9dc5e5fe716
+Trip Data
+trip_id: 1
+trip_name: trip_name
+tripData[0].trip_type.domestic.business_purpose: Meeting with client
+tripData[0].trip_type.domestic.trip_itinary.flight.one-way.departure_from: departure city
+tripData[0].trip_type.domestic.trip_itinary.flight.one-way.arrival_at: arival city
+tripData[0].trip_type.domestic.trip_itinary.flight.one-way.departure_date: 2021-09-01
+tripData[0].trip_type.domestic.trip_itinary.flight.one-way.departure_time: 10:00
+tripData[0].trip_type.domestic.trip_itinary.flight.one-way.airline_preference: Air France
+tripData[0].trip_type.domestic.trip_itinary.flight.round-trip.departure_from: departure city
+tripData[0].trip_type.domestic.trip_itinary.flight.round-trip.arrival_at: arival city
+tripData[0].trip_type.domestic.trip_itinary.flight.round-trip.departure_date: 2021-09-01
+tripData[0].trip_type.domestic.trip_itinary.flight.round-trip.return_date: 2021-09-02
+tripData[0].trip_type.domestic.trip_itinary.flight.round-trip.departure_time: 10:00
+tripData[0].trip_type.domestic.trip_itinary.flight.round-trip.return_time: 12:00
+tripData[0].trip_type.domestic.trip_itinary.flight.round-trip.airline_preference: Air France
+tripData[0].trip_type.domestic.trip_itinary.flight.multi-city.city_1.departure_from: departure city
+tripData[0].trip_type.domestic.trip_itinary.flight.multi-city.city_1.arrival_at: arival city
+tripData[0].trip_type.domestic.trip_itinary.flight.multi-city.city_1.departure_date: 2021-09-01
+tripData[0].trip_type.domestic.trip_itinary.flight.multi-city.city_1.departure_time: 10:00
+tripData[0].trip_type.domestic.trip_itinary.flight.multi-city.city_1.airline_preference: Air France
+tripData[0].trip_type.domestic.trip_itinary.flight.multi-city.city_2.departure_from: departure city
+tripData[0].trip_type.domestic.trip_itinary.flight.multi-city.city_2.arrival_at: arival city
+tripData[0].trip_type.domestic.trip_itinary.flight.multi-city.city_2.departure_date: 2021-09-02
+tripData[0].trip_type.domestic.trip_itinary.flight.multi-city.city_2.departure_time: 10:00
+tripData[0].trip_type.domestic.trip_itinary.flight.multi-city.city_2.airline_preference: Air France
+tripData[0].trip_type.domestic.trip_itinary.hotel.Location: hotel location
+tripData[0].trip_type.domestic.trip_itinary.hotel.hotel_preference: Hotel name
+tripData[0].trip_type.domestic.trip_itinary.hotel.hotel_id: 123456
+tripData[0].trip_type.domestic.trip_itinary.hotel.check-in_date: 2021-09-01
+tripData[0].trip_type.domestic.trip_itinary.hotel.check-in-time: 12:00
+tripData[0].trip_type.domestic.trip_itinary.hotel.check-out_date: 2021-09-02
+tripData[0].trip_type.domestic.trip_itinary.hotel.check-out-time: 12:00
+tripData[0].trip_type.domestic.trip_itinary.car_rental.pick_up_date: dd/mm/yyyy
+tripData[0].trip_type.domestic.trip_itinary.car_rental.pick_up_time: hh:mm
+tripData[0].trip_type.domestic.trip_itinary.car_rental.pick_up_city: pick-up city
+tripData[0].trip_type.domestic.trip_itinary.car_rental.drop_off_date: dd/mm/yyyy
+tripData[0].trip_type.domestic.trip_itinary.car_rental.drop_off_time: hh:mm
+tripData[0].trip_type.domestic.trip_itinary.car_rental.drop_off_city: drop-off city
+tripData[0].trip_type.domestic.trip_itinary.car_rental.car_type: eco/seadan/suv
+tripData[0].trip_type.domestic.trip_itinary.car_rental.driver_needed: yes/no
+tripData[0].trip_type.domestic.trip_itinary.bus.departure_from: departure city
+tripData[0].trip_type.domestic.trip_itinary.bus.arrival_at: arival city
+tripData[0].trip_type.domestic.trip_itinary.bus.departure_date: 2021-09-01
+tripData[0].trip_type.domestic.trip_itinary.bus.description: preferences if any
+tripData[0].trip_type.domestic.trip_itinary.train.departure_from: departure city
+tripData[0].trip_type.domestic.trip_itinary.train.arrival_at: arival city
+tripData[0].trip_type.domestic.trip_itinary.train.departure_date: 2021-09-01
+tripData[0].trip_type.domestic.trip_itinary.train.description: preferences if any
+tripData[0].trip_type.international.business_purpose: Meeting with client
+tripData[0].trip_type.international.trip_itinary.flight.one-way.departure_from: departure city
+tripData[0].trip_type.international.trip_itinary.flight.one-way.arrival_at: arival city
+tripData[0].trip_type.international.trip_itinary.flight.one-way.departure_date: 2021-09-01
+tripData[0].trip_type.international.trip_itinary.flight.one-way.departure_time: 10:00
+tripData[0].trip_type.international.trip_itinary.flight.one-way.airline_preference: Air France
+tripData[0].trip_type.international.trip_itinary.flight.round-trip.departure_from: departure city
+tripData[0].trip_type.international.trip_itinary.flight.round-trip.arrival_at: arival city
+tripData[0].trip_type.international.trip_itinary.flight.round-trip.departure_date: 2021-09-01
+tripData[0].trip_type.international.trip_itinary.flight.round-trip.return_date: 2021-09-02
+tripData[0].trip_type.international.trip_itinary.flight.round-trip.departure_time: 10:00
+tripData[0].trip_type.international.trip_itinary.flight.round-trip.return_time: 12:00
+tripData[0].trip_type.international.trip_itinary.flight.round-trip.airline_preference: Air France
+tripData[0].trip_type.international.trip_itinary.flight.multi-city.city_1.departure_from: departure city
+tripData[0].trip_type.international.trip_itinary.flight.multi-city.city_1.arrival_at: arival city
+tripData[0].trip_type.international.trip_itinary.flight.multi-city.city_1.departure_date: 2021-09-01
+tripData[0].trip_type.international.trip_itinary.flight.multi-city.city_1.departure_time: 10:00
+tripData[0].trip_type.international.trip_itinary.flight.multi-city.city_1.airline_preference: Air France
+tripData[0].trip_type.international.trip_itinary.flight.multi-city.city_2.departure_from: departure city
+tripData[0].trip_type.international.trip_itinary.flight.multi-city.city_2.arrival_at: arival city
+tripData[0].trip_type.international.trip_itinary.flight.multi-city.city_2.departure_date: 2021-09-02
+tripData[0].trip_type.international.trip_itinary.flight.multi-city.city_2.departure_time: 10:00
+tripData[0].trip_type.international.trip_itinary.flight.multi-city.city_2.airline_preference: Air France
+tripData[0].trip_type.international.trip_itinary.hotel.Location: hotel location
+tripData[0].trip_type.international.trip_itinary.hotel.hotel_preference: Hotel name
+tripData[0].trip_type.international.trip_itinary.hotel.hotel_id: 123456
+tripData[0].trip_type.international.trip_itinary.hotel.check-in_date: 2021-09-01
+tripData[0].trip_type.international.trip_itinary.hotel.check-in-time: 12:00
+tripData[0].trip_type.international.trip_itinary.hotel.check-out_date: 2021-09-02
+tripData[0].trip_type.international.trip_itinary.hotel.check-out-time: 12:00
+tripData[0].trip_type.international.trip_itinary.car_rental.pick_up_date: dd/mm/yyyy
+tripData[0].trip_type.international.trip_itinary.car_rental.pick_up_time: hh:mm
+tripData[0].trip_type.international.trip_itinary.car_rental.pick_up_city: pick-up city
+tripData[0].trip_type.international.trip_itinary.car_rental.drop_off_date: dd/mm/yyyy
+tripData[0].trip_type.international.trip_itinary.car_rental.drop_off_time: hh:mm
+tripData[0].trip_type.international.trip_itinary.car_rental.drop_off_city: drop-off city
+tripData[0].trip_type.international.trip_itinary.car_rental.car_type: eco/seadan/suv
+tripData[0].trip_type.international.trip_itinary.car_rental.driver_needed: yes/no
+tripData[0].trip_type.international.trip_itinary.bus.departure_from: departure city
+tripData[0].trip_type.international.trip_itinary.bus.arrival_at: arival city
+tripData[0].trip_type.international.trip_itinary.bus.departure_date: 2021-09-01
+tripData[0].trip_type.international.trip_itinary.bus.description: preferences if any
+tripData[0].trip_type.international.trip_itinary.train.departure_from: departure city
+tripData[0].trip_type.international.trip_itinary.train.arrival_at: arival city
+tripData[0].trip_type.international.trip_itinary.train.departure_date: 2021-09-01
+tripData[0].trip_type.international.trip_itinary.train.description: preferences if any 
+
+
+{trip.trip_type.domestic.trip_itinary?.flight && (
+    <Typography variant="body2">
+        <strong>Flight:</strong> {trip.trip_type.domestic.trip_itinary.flight["one-way"].departure_from} →{" "}
+        {trip.trip_type.domestic.trip_itinary.flight["one-way"].arrival_at}
+    </Typography>
+)}
+
+{trip.trip_type.domestic.trip_itinary?.hotel && (
+    <Typography variant="body2">
+        <strong>Hotel:</strong> {trip.trip_type.domestic.trip_itinary.hotel.hotel_preference} in{" "}
+        {trip.trip_type.domestic.trip_itinary.hotel.Location}
+    </Typography>
+)}
+    
+{trip.trip_type.domestic.trip_itinary?.flight && (
+    <Typography variant="body2">
+        <strong>Flight:</strong> {trip.trip_type.domestic.trip_itinary.flight["one-way"].departure_from} →{" "}
+        {trip.trip_type.domestic.trip_itinary.flight["one-way"].arrival_at}
+    </Typography>
+)}
+
+{trip.trip_type.domestic.trip_itinary?.hotel && (
+    <Typography variant="body2">
+        <strong>Hotel:</strong> {trip.trip_type.domestic.trip_itinary.hotel.hotel_preference} in{" "}
+        {trip.trip_type.domestic.trip_itinary.hotel.Location}
+    </Typography>
+)}*/
