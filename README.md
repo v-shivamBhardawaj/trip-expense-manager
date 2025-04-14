@@ -52,7 +52,7 @@ Other:
 
 1. Clone this repo:
 
-   `http://gitlab.yatra.com/CorpUITeam/corp-ui-new-theme/yt-boiler-plate-v2.git`
+   `http://gitlab.yatra.com/CorpUITeam/corp-ui-new-theme/trip-expense-manager.git`
 
 2. Install all packages:
 
@@ -64,11 +64,11 @@ Other:
 
 4. Application Health URL:
 
-   `https://dev.yatra.com/yt-boiler-plate-v2/DefautPage`
+   `https://dev.yatra.com/trip-expense-manager/DefautPage`
 
 ### Build and run a server (SSR)
 
-1. Build the project (production bundle will be in the `"yt-boiler-plate-v2"` folder):
+1. Build the project (production bundle will be in the `"trip-expense-manager"` folder):
 
     `npm run build`
 
@@ -120,3 +120,5 @@ All configuration is available in files with constants:
 - `src\constants` - a directory with app files with configuration constants
 - `src\server\constants.ts` - contains a server port and render to stream options
 
+# trip-expense-manager
+# trip-expense-manager
