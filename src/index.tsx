@@ -7,6 +7,8 @@ import { initStore } from 'store/store';
 import { Provider } from 'react-redux';
 import { isServer } from 'utils';
 import { ROUTE_CONSTANTS } from 'constants/routeConstants';
+import { AuthProvider } from './AuthContext';  // Make sure to import AuthProvider
+
 const store = initStore(!isServer && window.__PRELOADED_STATE__ && window.__PRELOADED_STATE__);
 
 if (module.hot) {
@@ -16,15 +18,17 @@ if (module.hot) {
   });
 }
 
-const indexJSX
-  = 
-    <Provider store={store}>
-      <HelmetProvider>
-        <BrowserRouter basename={ROUTE_CONSTANTS.BASE_PATH}>
+const indexJSX = (
+  <Provider store={store}>
+    <HelmetProvider>
+      <BrowserRouter basename={ROUTE_CONSTANTS.BASE_PATH}>
+        <AuthProvider> {/* Wrap the app with AuthProvider here */}
           <App />
-        </BrowserRouter>
-      </HelmetProvider>
-    </Provider>;
+        </AuthProvider>
+      </BrowserRouter>
+    </HelmetProvider>
+  </Provider>
+);
 
 const container = document.getElementById('root');
 
