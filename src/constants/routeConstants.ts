@@ -11,10 +11,11 @@ export const ROUTE_CONSTANTS = {
   EXPENSES: "/expenses",
   ADDTRIP: "/addtrip",
   TRIPDETAILS: "/tripdetails",
-  USERANDCONTROLS: "/userandcontrols",
+  USERS: "/users",
   USERDETAILS: "/userdetails",
   ADDUSER: "/adduser",
   BUDGETS: "/budgets",
   ADDBUDGET: "/addbudget",
   BUDGETDETAILS: "/budgetdetails",
+  SETTINGS: "/settings",
 };

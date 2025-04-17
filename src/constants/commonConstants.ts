@@ -8,8 +8,9 @@ export const PAGE_NAMES = {
   PAGE_NOT_FOUND: 'Page Not Found',
   TRIPS: 'Trips',
   EXPENSES: 'Expenses',
-  UserAndControls: 'User And Controls',
+  Users: 'Users',
   BUDGETS: 'Budgets',
+  SETTINGS: 'Settings',
 };
 
 export const ABOUT_TEXT = 'About page';

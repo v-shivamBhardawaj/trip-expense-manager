@@ -1,6 +1,6 @@
 import UserAndControlsComponent from 'components/UserAndControlsComponent/UserAndControlsComponent';
 
-const UserAndControls = () => {
+const Users = () => {
     return (
         <div>
             <UserAndControlsComponent />
@@ -8,4 +8,4 @@ const UserAndControls = () => {
     )
 }
 
-export {UserAndControls};
+export {Users};

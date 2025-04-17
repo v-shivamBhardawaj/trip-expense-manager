@@ -5,8 +5,9 @@ import {
   Home,
   Dashboard,
   Trips,
-  UserAndControls,
+  Users,
   Expenses,
+  Settings,
 } from 'pages';
 import { AddTrip } from 'components/Trips/AddTrip/AddTrip';
 import TripDetails from 'components/Trips/TripDetails/TripDetails';
@@ -24,12 +25,13 @@ const Router: FC = () => (
     <Route path={ROUTE_CONSTANTS.EXPENSES} element={<Expenses />} />
     <Route path={ROUTE_CONSTANTS.ADDTRIP} element={<AddTrip />} />
     <Route path={ROUTE_CONSTANTS.TRIPDETAILS} element={<TripDetails />} />
-    <Route path={ROUTE_CONSTANTS.USERANDCONTROLS} element={<UserAndControls />} />
+    <Route path={ROUTE_CONSTANTS.USERS} element={<Users />} />
     <Route path={ROUTE_CONSTANTS.USERDETAILS} element={<UserDetails />} />
     <Route path={ROUTE_CONSTANTS.ADDUSER} element={<AddUser />} />
     <Route path={ROUTE_CONSTANTS.BUDGETS} element={<Budgets />} />
     <Route path={ROUTE_CONSTANTS.ADDBUDGET} element={<AddBudget />} />
     <Route path={ROUTE_CONSTANTS.BUDGETDETAILS} element={<BudgetDetails />} />
+    <Route path={ROUTE_CONSTANTS.SETTINGS} element={<Settings />} />
   </Routes>
 );
 export default Router;
