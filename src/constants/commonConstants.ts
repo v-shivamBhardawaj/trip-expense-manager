@@ -11,6 +11,18 @@ export const PAGE_NAMES = {
   Users: 'Users',
   BUDGETS: 'Budgets',
   SETTINGS: 'Settings',
+  User: 'User',
+  Departments: 'Departments',
+  RolesAndPermissions: 'RolesAndPermissions',
+  ORGANIZATIONPROFILE: 'Organization Profile',
+  CURRENCIES: 'Currencies',
+  TAXES: 'Taxes',
+  TAGS: 'Tags',
+  SUBSCRIPTION: 'Subscription',
+  REPORTAUTOMATION: 'Report Automation',
+  WORKFLOWRULES: 'Workflow Rules',
+  ACTIONS: 'Actions',
+  SCHEDULES: 'Schedules',
 };
 
 export const ABOUT_TEXT = 'About page';

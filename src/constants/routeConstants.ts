@@ -1,3 +1,4 @@
+
 // Purpose: To store the route constants for the application.
 export const ROUTE_CONSTANTS = {
   BASE_PATH: '/trip-expense-manager',
@@ -18,4 +19,16 @@ export const ROUTE_CONSTANTS = {
   ADDBUDGET: "/addbudget",
   BUDGETDETAILS: "/budgetdetails",
   SETTINGS: "/settings",
+  USER: "/settings/user",
+  DEPARTMENTS: "/settings/departments",
+  ROLESANDPERMISSIONS: "/settings/roles-and-permissions",
+  ORGANIZATIONPROFILE: "/settings/organization-profile",
+  CURRENCIES: "/settings/currencies",
+  TAXES: "/settings/taxes",
+  TAGS: "/settings/tags",
+  SUBSCRIPTION: "/settings/subscription",
+  REPORTAUTOMATION: "/settings/report-automation",
+  WORKFLOWRULES: "/settings/workflow-rules",
+  ACTIONS: "/settings/actions",
+  SCHEDULES: "/settings/schedules",
 };

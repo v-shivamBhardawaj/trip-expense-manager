@@ -16,6 +16,18 @@ import { AddUser } from 'components/UserAndControlsComponent/AddUser/AddUser';
 import { Budgets } from 'pages/Budgets/Budgets';
 import { AddBudget } from 'components/BudgetsControl/AddBudget/AddBudget';
 import BudgetDetails from 'components/BudgetsControl/BudgetDetails/BudgetDetails';
+import User from 'components/SettingLayout/User/User';
+import Departments from 'components/SettingLayout/Departments/Departments';
+import RolesAndPermissions from 'components/SettingLayout/RolesAndPermissions/RolesAndPermissions';
+import OrganizationProfile from 'components/SettingLayout/OrganizationProfile/OrganizationProfile';
+import Currencies from 'components/SettingLayout/Currencies/Currencies';
+import Taxes from 'components/SettingLayout/Taxes/Taxes';
+import Tags from 'components/SettingLayout/Tags/Tags';
+import Subscription from 'components/SettingLayout/Subscription/Subscription';
+import ReportAutomation from 'components/SettingLayout/ReportAutomation/ReportAutomation';
+import WorkflowRules from 'components/SettingLayout/WorkflowRules/WorkflowRules';
+import Actions from 'components/SettingLayout/Actions/Actions';
+import Schedules from 'components/SettingLayout/Schedules/Schedules';
 
 const Router: FC = () => (  
   <Routes>
@@ -32,6 +44,18 @@ const Router: FC = () => (
     <Route path={ROUTE_CONSTANTS.ADDBUDGET} element={<AddBudget />} />
     <Route path={ROUTE_CONSTANTS.BUDGETDETAILS} element={<BudgetDetails />} />
     <Route path={ROUTE_CONSTANTS.SETTINGS} element={<Settings />} />
+    <Route path={ROUTE_CONSTANTS.USER} element={<User />} />
+    <Route path={ROUTE_CONSTANTS.DEPARTMENTS} element={<Departments />} />
+    <Route path={ROUTE_CONSTANTS.ROLESANDPERMISSIONS} element={<RolesAndPermissions />} />
+    <Route path={ROUTE_CONSTANTS.ORGANIZATIONPROFILE} element={<OrganizationProfile />} />
+    <Route path={ROUTE_CONSTANTS.CURRENCIES} element={<Currencies />} />
+    <Route path={ROUTE_CONSTANTS.TAXES} element={<Taxes />} />
+    <Route path={ROUTE_CONSTANTS.TAGS} element={<Tags />} />
+    <Route path={ROUTE_CONSTANTS.SUBSCRIPTION} element={<Subscription />} />
+    <Route path={ROUTE_CONSTANTS.REPORTAUTOMATION} element={<ReportAutomation />} />
+    <Route path={ROUTE_CONSTANTS.WORKFLOWRULES} element={<WorkflowRules />} />
+    <Route path={ROUTE_CONSTANTS.ACTIONS} element={<Actions />} />
+    <Route path={ROUTE_CONSTANTS.SCHEDULES} element={<Schedules />} />
   </Routes>
 );
 export default Router;

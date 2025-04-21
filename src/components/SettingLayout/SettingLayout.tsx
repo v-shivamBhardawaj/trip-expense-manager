@@ -1,32 +1,32 @@
-// import { useRouter } from 'next/router';
-import { Typography, Grid, Button, Box, Paper } from '@mui/material';
+import { useNavigate } from "react-router-dom";
+import { Typography, Grid, Button, Box, Paper } from "@mui/material";
 
 const settingsData = [
   {
-    heading: 'Organization',
-    items: ['Organization Profile', 'Currencies', 'Taxes', 'Tags', 'Subscription'],
+    heading: "Organization",
+    items: ["Organization Profile", "Currencies", "Taxes", "Tags", "Subscription"],
   },
   {
-    heading: 'Users and Control',
-    items: ['Users', 'Roles & Permissions', 'Departments', 'Policies'],
+    heading: "Users and Control",
+    items: ["User", "Roles and Permissions", "Departments"],
   },
   {
-    heading: 'Customization',
-    items: ['Modules', 'Web Tabs', 'PDF Templates', 'Email Templates', 'SMS Notifications'],
+    heading: "Customization",
+    items: ["Modules", "Web Tabs", "PDF Templates", "Email Templates", "SMS Notifications"],
   },
   {
-    heading: 'Automation',
-    items: ['Report Automation', 'Workflow Rules', 'Actions', 'Schedules'],
+    heading: "Automation",
+    items: ["Report Automation", "Workflow Rules", "Actions", "Schedules"],
   },
 ];
 
 const SettingLayout = () => {
-//   const router = useRouter();
+  const navigate = useNavigate();
 
-//   const handleNavigate = (name: string) => {
-//     const path = name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-//     router.push(`/settings/${path}`);
-//   };
+  const handleNavigate = (name: string) => {
+    const path = name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    navigate(`/settings/${path}`);
+  };
 
   return (
     <Box sx={{ padding: 4 }}>
@@ -46,8 +46,8 @@ const SettingLayout = () => {
                   <Button
                     key={item}
                     variant="outlined"
-                    // onClick={() => handleNavigate(item)}
-                    sx={{ justifyContent: 'flex-start' }}
+                    onClick={() => handleNavigate(item)}
+                    sx={{ justifyContent: "flex-start" }}
                   >
                     {item}
                   </Button>
