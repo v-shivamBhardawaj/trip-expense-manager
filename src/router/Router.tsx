@@ -28,6 +28,8 @@ import ReportAutomation from 'components/SettingLayout/ReportAutomation/ReportAu
 import WorkflowRules from 'components/SettingLayout/WorkflowRules/WorkflowRules';
 import Actions from 'components/SettingLayout/Actions/Actions';
 import Schedules from 'components/SettingLayout/Schedules/Schedules';
+import RolesAndPermissionForm from 'components/SettingLayout/RolesAndPermissionForm/RolesAndPermissionForm';
+import RolesInfo from 'components/SettingLayout/RolesAndPermissions/RolesInfo/RolesInfo';
 
 const Router: FC = () => (  
   <Routes>
@@ -47,6 +49,8 @@ const Router: FC = () => (
     <Route path={ROUTE_CONSTANTS.USER} element={<User />} />
     <Route path={ROUTE_CONSTANTS.DEPARTMENTS} element={<Departments />} />
     <Route path={ROUTE_CONSTANTS.ROLESANDPERMISSIONS} element={<RolesAndPermissions />} />
+    <Route path={ROUTE_CONSTANTS.ROLESANDPERMISSIONFORM} element={<RolesAndPermissionForm />} />
+    <Route path={ROUTE_CONSTANTS.ROLESINFO} element={<RolesInfo />} />
     <Route path={ROUTE_CONSTANTS.ORGANIZATIONPROFILE} element={<OrganizationProfile />} />
     <Route path={ROUTE_CONSTANTS.CURRENCIES} element={<Currencies />} />
     <Route path={ROUTE_CONSTANTS.TAXES} element={<Taxes />} />

@@ -31,4 +31,6 @@ export const ROUTE_CONSTANTS = {
   WORKFLOWRULES: "/settings/workflow-rules",
   ACTIONS: "/settings/actions",
   SCHEDULES: "/settings/schedules",
+  ROLESANDPERMISSIONFORM: "/settings/rolesandpermissionform",
+  ROLESINFO:"/settings/rolesandpermissions/rolesinfo",
 };

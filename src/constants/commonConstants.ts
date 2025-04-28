@@ -14,6 +14,7 @@ export const PAGE_NAMES = {
   User: 'User',
   Departments: 'Departments',
   RolesAndPermissions: 'RolesAndPermissions',
+  RolesAndPermissionForm: 'RolesAndPermissionForm',
   ORGANIZATIONPROFILE: 'Organization Profile',
   CURRENCIES: 'Currencies',
   TAXES: 'Taxes',
@@ -23,6 +24,7 @@ export const PAGE_NAMES = {
   WORKFLOWRULES: 'Workflow Rules',
   ACTIONS: 'Actions',
   SCHEDULES: 'Schedules',
+  ROLESINFO: 'Roles Info',
 };
 
 export const ABOUT_TEXT = 'About page';
