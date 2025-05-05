@@ -1,4 +1,4 @@
-import UserAndControlsComponent from 'components/UserAndControlsComponent/UserAndControlsComponent';
+import UserAndControlsComponent from 'components/SettingLayout/UserAndControlsComponent/UserAndControlsComponent';
 
 const Users = () => {
     return (

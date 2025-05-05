@@ -98,7 +98,7 @@ const RoleInfo = () => {
         try {
           const response = await fetch(`/${APP_NAME}/api/rolesandpermissionsget`);
           const data = await response.json();
-
+    
           if (data.success) {
             const foundRole = data.data.find((role: RoleDetails) => role._id === id);
             if (foundRole) {
@@ -115,7 +115,7 @@ const RoleInfo = () => {
           setLoading(false);
         }
       }
-    };
+    };    
 
     fetchRoleDetails();
   }, [id]);

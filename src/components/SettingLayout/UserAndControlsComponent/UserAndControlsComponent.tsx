@@ -8,7 +8,7 @@ const UserAndControlsComponent = () => {
   return (
     <>
       <Stack>
-        <Button variant="contained" onClick={()=>navigate("/adduser")} style={{width:"10%", marginTop:"10px"}}>Add User</Button>
+        <Button variant="contained" onClick={()=>navigate("/settings/adduser")} style={{width:"10%", marginTop:"10px"}}>Add User</Button>
       </Stack>
       <div>
         <Users />

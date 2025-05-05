@@ -12,16 +12,13 @@ import fs from "fs";
 import { errorHandler } from './middlewares/errorHandler';
 import { initStore, RootState } from 'store/store';
 import authenticateSSO from './middlewares/authenticateSSO';
-import {fetchTripData} from './middlewares/fetchTripData';
-import { fetchUsers } from './middlewares/fetchUsers';
 import { mongoConnect } from './dbModels/mongoConnect';
-import { fetchBudgets } from './middlewares/fetchBudget';
-import Trip from './dbModels/trip';
-import Budget from './dbModels/budget';
-import User from './dbModels/users';
-import { fetchExpenses } from './middlewares/fetchExpenses';
-import RolesSchema from './dbModels/roles';
-import fetchRolesAndPermissions from './middlewares/fetchRolesAndPermissions';
+import { registerTripRoutes } from './routes/tripRoutes';
+import { registerUserRoutes } from './routes/userRoutes';
+import { registerBudgetRoutes } from './routes/budgetRoutes';
+import { registerExpenseRoutes } from './routes/expenseRoutes';
+import { registerRolesRoutes } from './routes/rolesRoutes';
+import { registerDepartmentRoutes } from './routes/departmentRoutes';
 
 
 const { appLogger } = require('../../src/utils/logger');
@@ -86,243 +83,24 @@ const runServer = async (hotReload?: () => RequestHandler[]) => {
 
 
 
-/*Trip API Endpoints */
+  /*Trip API Endpoints */
+  registerTripRoutes(app, APP_NAME);
 
-  app.get(`/${APP_NAME}/api/trip-get`, async (_req, res) => {
-    try {
-        const trips = await Trip.find();
-        res.status(200).json(trips);
-    } catch (error) {
-        console.error("Error fetching trips:", error);
-        res.status(500).json({ success: false, message: "Failed to fetch trip data" });
-    }
-});
+  /*Users API EndPoints*/
+  registerUserRoutes(app, APP_NAME);
 
-  app.use(`/${APP_NAME}/api/trip-data`, async (_req, res, next) => {
-    try {
-        const tripData = await fetchTripData();
-        res.status(200).json(tripData);
-    } catch (err: any) {
-        console.error("Error in trip-data route:", err);
-        next(new Error('Failed to fetch trip data'));
-    }
-  });
+  /*Budget API EndPoints */
+  registerBudgetRoutes(app, APP_NAME);
 
-  app.post(`/${APP_NAME}/api/trip-post`, async (req, res) => {
-    try {
-        console.log("Received Request Body:", JSON.stringify(req.body, null, 2));
+  /* EXPENSES API ENDPOINTS */
+  registerExpenseRoutes(app, APP_NAME);
 
-        const { trip_id, trip_name, trip_type, details } = req.body;
+  /* Roles and Permissions API ENDPOINTS */
+  registerRolesRoutes(app, APP_NAME);
 
-        if (!trip_id || !trip_name || !trip_type || !details || !details.trip_itinerary) {
-            console.log("Missing required fields");
-            return res.status(400).json({ success: false, message: "Missing required fields" });
-        }
+  /* Department API endpoints */
+  registerDepartmentRoutes(app, APP_NAME);
 
-        const newTrip = new Trip({ trip_id, trip_name, trip_type, details });
-
-        await newTrip.save();
-        console.log("Trip Saved Successfully!");
-
-        res.status(201).json({ success: true, message: "Trip saved successfully!", trip: newTrip });
-    } catch (error) {
-        console.error("Error saving trip:", error);
-        res.status(500).json({ success: false, message: "Failed to store trip data" });
-    }
-});
-
-
-
-/*User API EndPoints*/
-
-  app.use(`/${APP_NAME}/api/users`, async (_req, res, next) => {
-    try {
-        const userData = await fetchUsers(); 
-        res.status(200).json(userData);
-    } catch (err) {
-        console.error("Error in users route:", err);
-        next(new Error('Failed to fetch and store user data'));
-    }
-  });
-
-
-  app.post(`/${APP_NAME}/api/user-post`, async (req, res) => {
-    try {
-        const userData = req.body; // Get the user data from the request body
-
-        // Check if the user already exists
-        const existingUser  = await User.findOne({ user_id: userData.user_id });
-        if (existingUser ) {
-            return res.status(400).json({ success: false, message: "User  with this ID already exists." });
-        }
-
-        // Create a new user instance
-        const newUser  = new User(userData);
-        await newUser .save(); // Save the user to the database
-        res.status(201).json({ success: true, message: "User  added successfully!", user: newUser  });
-    } catch (error) {
-        console.error("Error saving user:", error);
-        res.status(500).json({ success: false, message: "Failed to store user data" });
-      }
-  });
-
-  app.get(`/${APP_NAME}/api/user-get`, async (_req, res) => {
-    try {
-        const users = await User.find();
-        res.status(200).json(users);
-    } catch (error) {
-        console.error("Error fetching users:", error);
-        res.status(500).json({ success: false, message: "Failed to fetch user data" });
-    }
-  });
-
-/*Budget API EndPoints */
-
-app.use(`/${APP_NAME}/api/budgets`, async (_req, res, next) => {
-  try {
-      const budgetData = await fetchBudgets(); 
-      res.status(200).json(budgetData);
-  } catch (err) {
-      console.error("Error in budgets route:", err);
-      next(new Error('Failed to fetch and store budget data'));
-  }
-});
-
-// Endpoint to create a new budget
-app.post(`/${APP_NAME}/api/budget-post`, async (req, res) => {
-  try {
-      const budgetData = req.body; // Get the budget data from the request body
-
-      // Check if a budget with the same ID already exists
-      const existingBudget = await Budget.findOne({ budget_id: budgetData.budget_id });
-      if (existingBudget) {
-          return res.status(400).json({ success: false, message: "Budget with this ID already exists." });
-      }
-
-      // Create a new budget instance
-      const newBudget = new Budget(budgetData);
-      await newBudget.save(); // Save the budget to the database
-      res.status(201).json({ success: true, message: "Budget saved successfully!", budget: newBudget });
-  } catch (error) {
-      console.error("Error saving budget:", error);
-      res.status(500).json({ success: false, message: "Failed to store budget data" });
-  }
-});
-
-app.get(`/${APP_NAME}/api/budget-get`, async (_req, res) => {
-  try {
-      // Fetch all budgets from the MongoDB database
-      const budgets = await Budget.find(); // This retrieves all budget documents
-
-      if (!Array.isArray(budgets) || budgets.length === 0) {
-          console.warn("No budgets found in the database.");
-          return res.status(404).json({ success: false, message: "No budgets found." }); // Return 404 if no budgets are found
-      }
-
-      res.status(200).json({ success: true, budgets }); // Return the fetched budgets
-  } catch (error) {
-      console.error("Error fetching budgets:", error);
-      res.status(500).json({ success: false, message: "Failed to fetch budget data" }); // Return 500 on error
-  }
-});
-
-/* EXPENSES API ENDPOINTS */
-
-app.use(`/${APP_NAME}/api/expenses`, async (_req, res, next) => {
-  try {
-      const expensesData = await fetchExpenses();
-      res.status(200).json(expensesData);
-  } catch (err) {
-      console.error("Error in expenses route:", err);
-      next(new Error('Failed to fetch and store expenses data')); 
-  }
-});
-
-/* Roles and Permissions API ENDPOINTS */
-
-// app.use(`/${APP_NAME}/api/roles-and-permissions`, async (_req, res, next) => {
-//   try {
-//       const rolesAndPermissionsData = await fetchRolesAndPermissions(); // Assuming this function fetches roles and permissions data
-//       res.status(200).json(rolesAndPermissionsData);
-//   } catch (err) {
-//       console.error("Error in roles-and-permissions route:", err);
-//       next(new Error('Failed to fetch and store roles and permissions data'));
-//   }
-// });
-
-app.post(`/${APP_NAME}/api/rolesandpermissionspost`, async (req, res) => {
-  try {
-    const data = req.body;
-
-    if (!data.role_name) {
-      return res.status(400).json({ success: false, message: "Missing role name" });
-    }    
-
-    const newEntry = new RolesSchema(data);
-    await newEntry.save();
-
-    res.status(201).json({ success: true, message: "Roles and permissions saved", data: newEntry });
-  } catch (error) {
-    console.error("Error saving roles and permissions:", error);
-    res.status(500).json({ success: false, message: "Failed to store roles and permissions" });
-  }
-});
-
-app.get(`/${APP_NAME}/api/rolesandpermissionsget`, async (_req, res) => {
-  try {
-    const roles = await RolesSchema.find();
-    res.status(200).json({ success: true, data: roles });
-  } catch (error) {
-    console.error("Error fetching roles and permissions:", error);
-    res.status(500).json({ success: false, message: "Failed to fetch roles and permissions" });
-  }
-});
-
-
-app.use(`/${APP_NAME}/api/roles-and-permissions`, async (_req, res, next) => {
-  try {
-    const rolesAndPermissionsData = await fetchRolesAndPermissions();
-    res.status(200).json({ success: true, data: rolesAndPermissionsData });
-  } catch (err) {
-    console.error("Error in roles-and-permissions route:", err);
-    next(new Error('Failed to fetch and store roles and permissions data'));
-  }
-});
-
-app.put(`/${APP_NAME}/api/rolesandpermissionsput/:id`, async (req, res) => {
-  try {
-    const roleId = req.params.id; // Get the role ID from the URL parameter
-    const updatedData = req.body; // Get the updated data from the request body
-
-    console.log('Received Request Body:', updatedData); // Add this log to debug
-
-    // Basic validation of role_name and permissions (you can extend this based on other required fields)
-    if (!updatedData.role_name || !updatedData.trip || !updatedData.expense_report || !updatedData.cards || !updatedData.advance) {
-      return res.status(400).json({ success: false, message: "Missing required fields (role_name, permissions)" });
-    }
-
-    // Find the role by its ID and update it
-    const updatedRole = await RolesSchema.findByIdAndUpdate(roleId, updatedData, { new: true });
-
-    if (!updatedRole) {
-      return res.status(404).json({ success: false, message: "Role not found" });
-    }
-
-    res.status(200).json({
-      success: true,
-      message: "Role and permissions updated successfully",
-      data: updatedRole
-    });
-  } catch (error) {
-    console.error("Error updating roles and permissions:", error);
-    // Log the error to the server for debugging
-    res.status(500).json({
-      success: false,
-      message: "Failed to update role and permissions",
-      error: error instanceof Error ? error.message : 'An unknown error occurred' // Optional: Send the error message for debugging purposes
-    });
-  }
-});
 
 
 

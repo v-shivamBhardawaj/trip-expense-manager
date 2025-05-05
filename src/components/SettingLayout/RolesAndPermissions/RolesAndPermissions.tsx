@@ -22,7 +22,7 @@ const RolesAndPermissions = () => {
         const response = await fetch(`/${APP_NAME}/api/rolesandpermissionsget`);
         const data = await response.json();
         if (data.success) {
-          setRoles(data.data);   // << here
+          setRoles(data.data);   
         } else {
           console.error("Failed to fetch roles:", data.message);
         }
@@ -40,8 +40,8 @@ const RolesAndPermissions = () => {
     navigate("/settings/rolesandpermissionform");
   };
 
-  const handleRoleClick = (roleId: string) => {
-    navigate(`/settings/rolesandpermissionform?id=${roleId}`);
+  const handleRoleClick = (_roleId: string) => {
+    navigate(`/settings/rolesandpermissions/rolesinfo?id=${_roleId}`);
   };
 
   return (

@@ -11,12 +11,11 @@ import {
 } from 'pages';
 import { AddTrip } from 'components/Trips/AddTrip/AddTrip';
 import TripDetails from 'components/Trips/TripDetails/TripDetails';
-import { UserDetails } from 'components/UserAndControlsComponent/UserDetails/UserDetails';
-import { AddUser } from 'components/UserAndControlsComponent/AddUser/AddUser';
+import { UserDetails } from 'components/SettingLayout/UserAndControlsComponent/UserDetails/UserDetails';
+import { AddUser }from 'components/SettingLayout/UserAndControlsComponent/AddUser/AddUser';
 import { Budgets } from 'pages/Budgets/Budgets';
 import { AddBudget } from 'components/BudgetsControl/AddBudget/AddBudget';
 import BudgetDetails from 'components/BudgetsControl/BudgetDetails/BudgetDetails';
-import User from 'components/SettingLayout/User/User';
 import Departments from 'components/SettingLayout/Departments/Departments';
 import RolesAndPermissions from 'components/SettingLayout/RolesAndPermissions/RolesAndPermissions';
 import OrganizationProfile from 'components/SettingLayout/OrganizationProfile/OrganizationProfile';
@@ -30,6 +29,7 @@ import Actions from 'components/SettingLayout/Actions/Actions';
 import Schedules from 'components/SettingLayout/Schedules/Schedules';
 import RolesAndPermissionForm from 'components/SettingLayout/RolesAndPermissionForm/RolesAndPermissionForm';
 import RolesInfo from 'components/SettingLayout/RolesAndPermissions/RolesInfo/RolesInfo';
+import DepartmentDetails from 'components/SettingLayout/Departments/DepartmentDetails/DepartmentDetails';
 
 const Router: FC = () => (  
   <Routes>
@@ -46,8 +46,10 @@ const Router: FC = () => (
     <Route path={ROUTE_CONSTANTS.ADDBUDGET} element={<AddBudget />} />
     <Route path={ROUTE_CONSTANTS.BUDGETDETAILS} element={<BudgetDetails />} />
     <Route path={ROUTE_CONSTANTS.SETTINGS} element={<Settings />} />
-    <Route path={ROUTE_CONSTANTS.USER} element={<User />} />
     <Route path={ROUTE_CONSTANTS.DEPARTMENTS} element={<Departments />} />
+    <Route path={ROUTE_CONSTANTS.DEPARTMENTDETAILS} element={<DepartmentDetails />} />
+    {/* <Route path={ROUTE_CONSTANTS.DEPARTMENTDETAILS} element={<DepartmentDetails />} /> */}
+    {/* <Route path={ROUTE_CONSTANTS.DEPARTMENTS} element={<DepartmentCard />} /> */}
     <Route path={ROUTE_CONSTANTS.ROLESANDPERMISSIONS} element={<RolesAndPermissions />} />
     <Route path={ROUTE_CONSTANTS.ROLESANDPERMISSIONFORM} element={<RolesAndPermissionForm />} />
     <Route path={ROUTE_CONSTANTS.ROLESINFO} element={<RolesInfo />} />

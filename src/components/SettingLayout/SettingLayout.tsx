@@ -8,7 +8,7 @@ const settingsData = [
   },
   {
     heading: "Users and Control",
-    items: ["User", "Roles and Permissions", "Departments"],
+    items: ["Users", "Roles and Permissions", "Departments"],
   },
   {
     heading: "Customization",

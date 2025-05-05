@@ -11,6 +11,7 @@ interface User {
     display_name: string;
     email: string;
     role: string;
+    department: string;  // Added department info
 }
 
 const Users = () => {
@@ -92,9 +93,12 @@ const Users = () => {
                                     <Typography variant="body2">
                                         <strong>Role:</strong> {user.role}
                                     </Typography>
+                                    <Typography variant="body2">
+                                        <strong>Department:</strong> {user.department}  {/* Display the department name */}
+                                    </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" onClick={() => navigate(`/userdetails`, { state: { user } })}>
+                                    <Button size="small" onClick={() => navigate(`/settings/userdetails`, { state: { user } })}>
                                         View Details
                                     </Button>
                                 </CardActions>
