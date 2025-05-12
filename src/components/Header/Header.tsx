@@ -11,10 +11,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import AirplaneTicketIcon from '@mui/icons-material/AirplaneTicket';
+import { PAGE_NAMES } from 'constants/commonConstants';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [PAGE_NAMES.TRIPS, PAGE_NAMES.Users, PAGE_NAMES.REPORT, PAGE_NAMES.BUDGETS, PAGE_NAMES.EXPENSES, PAGE_NAMES.SETTINGS]
+const settings = [PAGE_NAMES.RolesAndPermissions, PAGE_NAMES.Users];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<HTMLElement | null>(null);
@@ -39,7 +40,7 @@ const Header = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <AirplaneTicketIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -55,7 +56,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            YATRA
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -92,7 +93,7 @@ const Header = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <AirplaneTicketIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -109,7 +110,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            YATRA
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

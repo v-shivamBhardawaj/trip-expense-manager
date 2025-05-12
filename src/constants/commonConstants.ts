@@ -11,6 +11,8 @@ export const PAGE_NAMES = {
   Users: 'Users',
   BUDGETS: 'Budgets',
   SETTINGS: 'Settings',
+  REPORT: 'Report',
+  ADDORUPLOADREPORT: 'Add or Upload Report',
   User: 'User',
   UserForm: 'UserForm',
   Departments: 'Departments',

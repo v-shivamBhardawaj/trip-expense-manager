@@ -6,3 +6,4 @@ export { Expenses } from 'pages/Expenses/Expenses';
 export {Users} from 'pages/Users/Users';
 export { Budgets } from 'pages/Budgets/Budgets';
 export {Settings} from 'pages/Settings/Settings';
+export {Report} from 'pages/Report/Report';

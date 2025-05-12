@@ -11,6 +11,8 @@ export const ROUTE_CONSTANTS = {
   TRIPS: "/trips",
   EXPENSES: "/expenses",
   ADDTRIP: "/addtrip",
+  REPORT: "/report",
+  ADDORUPLOADREPORT: "/add-or-upload-report",
   TRIPDETAILS: "/tripdetails",
   USERS: "/settings/users",
   USERDETAILS: "/settings/userdetails",

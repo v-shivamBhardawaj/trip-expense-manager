@@ -6,6 +6,7 @@ import {
   Dashboard,
   Trips,
   Users,
+  Report,
   Expenses,
   Settings,
 } from 'pages';
@@ -30,6 +31,7 @@ import Schedules from 'components/SettingLayout/Schedules/Schedules';
 import RolesAndPermissionForm from 'components/SettingLayout/RolesAndPermissionForm/RolesAndPermissionForm';
 import RolesInfo from 'components/SettingLayout/RolesAndPermissions/RolesInfo/RolesInfo';
 import DepartmentDetails from 'components/SettingLayout/Departments/DepartmentDetails/DepartmentDetails';
+import AddOrUploadReport from 'components/ReportComponent/AddOrUploadReport/AddOrUploadReport';
 
 const Router: FC = () => (  
   <Routes>
@@ -40,6 +42,8 @@ const Router: FC = () => (
     <Route path={ROUTE_CONSTANTS.ADDTRIP} element={<AddTrip />} />
     <Route path={ROUTE_CONSTANTS.TRIPDETAILS} element={<TripDetails />} />
     <Route path={ROUTE_CONSTANTS.USERS} element={<Users />} />
+    <Route path={ROUTE_CONSTANTS.REPORT} element={<Report />} />
+    <Route path={ROUTE_CONSTANTS.ADDORUPLOADREPORT} element={<AddOrUploadReport />} />
     <Route path={ROUTE_CONSTANTS.USERDETAILS} element={<UserDetails />} />
     <Route path={ROUTE_CONSTANTS.ADDUSER} element={<AddUser />} />
     <Route path={ROUTE_CONSTANTS.BUDGETS} element={<Budgets />} />

@@ -1,8 +1,3 @@
-//Layout of the Trip Page is defined here
-//List of all TripCards Will be displayed here
-//Onclicking the AddTrip Button on this page we will be redirected to the AddTrip Page
-
-// import {AddTrip} from "../AddTrip/AddTrip";
 import { useNavigate } from "react-router-dom";
 import TripCard from "../TripCard/TripCard";
 import Stack from '@mui/material/Stack';

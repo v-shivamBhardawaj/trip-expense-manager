@@ -32,7 +32,7 @@ const Menu: FC<IMenu> = (): ReactElement => (
       <Toolbar />
       <Box sx={{ overflow: 'auto' }}>
         <List>
-          {[PAGE_NAMES.TRIPS, PAGE_NAMES.Users, PAGE_NAMES.BUDGETS, PAGE_NAMES.EXPENSES, PAGE_NAMES.SETTINGS].map((text, index) => (
+          {[PAGE_NAMES.TRIPS, PAGE_NAMES.Users, PAGE_NAMES.REPORT, PAGE_NAMES.BUDGETS, PAGE_NAMES.EXPENSES, PAGE_NAMES.SETTINGS].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <NavLink
@@ -42,10 +42,12 @@ const Menu: FC<IMenu> = (): ReactElement => (
                       : index === 1
                       ? ROUTE_CONSTANTS.USERS
                       : index === 2
-                      ? ROUTE_CONSTANTS.BUDGETS
+                      ? ROUTE_CONSTANTS.REPORT
                       : index === 3
-                      ? ROUTE_CONSTANTS.EXPENSES
+                      ? ROUTE_CONSTANTS.BUDGETS
                       : index === 4
+                      ? ROUTE_CONSTANTS.EXPENSES
+                      : index === 5
                       ? ROUTE_CONSTANTS.SETTINGS
                       : ''
                   }
